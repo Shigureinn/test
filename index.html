@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>計算プログラム</title>
+</head>
+<body>
+    <h1>計算プログラム</h1>
+    
+    <label for="ini_gauge">初期ゲージ (ini_gauge): </label>
+    <input type="number" id="ini_gauge"><br><br>
+    
+    <label for="rise_speed">上昇速度 (rise_speed): </label>
+    <input type="number" id="rise_speed"><br><br>
+    
+    <label>時間 (t): </label><br>
+    <button onclick="setTime(15)">15</button>
+    <button onclick="setTime(20)">20</button>
+    <button onclick="setTime(25)">25</button>
+    <button onclick="setTime(30)">30</button><br><br>
+    
+    <button onclick="calculate()">計算する</button>
+    
+    <h2>結果: <span id="result"></span></h2>
+    
+    <script src="script.js"></script>
+</body>
+</html>

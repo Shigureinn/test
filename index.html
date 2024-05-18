@@ -3,25 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>計算プログラム</title>
+    <style>
+        .history-entry {
+            border-bottom: 1px solid #ccc;
+            padding: 5px 0;
+        }
+        .time-button {
+            padding: 5px 10px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            cursor: pointer;
+        }
+        .time-button.selected {
+            background-color: #add8e6; /* 選択されたときの色 */
+        }
+    </style>
 </head>
 <body>
     <h1>計算プログラム</h1>
     
-    <label for="ini_gauge">初期ゲージ (%): </label>
+    <label for="ini_gauge">初期ゲージ (ini_gauge): </label>
     <input type="number" id="ini_gauge"><br><br>
     
-    <label for="rise_speed">戦法上昇速度 (%): </label>
+    <label for="rise_speed">上昇速度 (rise_speed): </label>
     <input type="number" id="rise_speed"><br><br>
     
     <label>時間 (t): </label><br>
-    <button onclick="setTime(15)">15</button>
-    <button onclick="setTime(20)">20</button>
-    <button onclick="setTime(25)">25</button>
-    <button onclick="setTime(30)">30</button><br><br>
+    <button class="time-button" onclick="setTime(15, this)">15</button>
+    <button class="time-button" onclick="setTime(20, this)">20</button>
+    <button class="time-button" onclick="setTime(25, this)">25</button>
+    <button class="time-button" onclick="setTime(30, this)">30</button><br><br>
     
     <button onclick="calculate()">計算する</button>
     
     <h2>結果: <span id="result"></span></h2>
+    
+    <h3>計算履歴</h3>
+    <div id="history"></div>
     
     <script src="script.js"></script>
 </body>
